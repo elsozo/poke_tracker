@@ -208,6 +208,13 @@ products:
     msrp_eur: 24.99
     tolerance_pct: 20
 
+  - id: heros-transcendants-upc
+    label: "Heros Transcendants - Ultra Premium Collection"
+    match_keywords: [*set_heros, ["ultra premium"]]
+    priority: 5
+    msrp_eur: 119.99
+    tolerance_pct: 20
+
   - id: heros-transcendants-poster-lucario
     label: "Heros Transcendants - Coffret Poster Premium Mega-Lucario"
     match_keywords: [["poster premium", "poster"], ["lucario"]]
@@ -305,6 +312,13 @@ products:
     match_keywords: [*set_rivalites, ["booster bundle"]]
     priority: 5
     msrp_eur: 24.99
+    tolerance_pct: 20
+
+  - id: rivalites-destinees-upc
+    label: "Rivalites Destinees - Ultra Premium Collection"
+    match_keywords: [*set_rivalites, ["ultra premium"]]
+    priority: 5
+    msrp_eur: 119.99
     tolerance_pct: 20
 
   - id: rivalites-destinees-display
