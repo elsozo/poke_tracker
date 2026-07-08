@@ -1,10 +1,15 @@
 # Each entry maps a site_id to its scraping config. Adding a new PrestaShop/Shopify/WooCommerce
 # boutique shop needs no new Python code: pick the matching scraper_class and set start_urls.
 # See docs/ADDING_A_SITE.md for the full walkthrough.
+#
+# locale: country/locale this site ships from (FR, BE, NL, IE...) - informational + used for
+# future locale-scoped filtering, not currently gating anything on its own.
 sites:
+  # ===================== France =====================
   ludifolie:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.ludifolie.com"
     start_urls:
       - "https://www.ludifolie.com/recherche?controller=search&s=pokemon"
@@ -15,6 +20,7 @@ sites:
   variantes:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.variantes.com"
     start_urls:
       - "https://www.variantes.com/recherche?controller=search&s=pokemon"
@@ -27,6 +33,7 @@ sites:
   bcdjeux:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.bcd-jeux.fr"
     start_urls:
       - "https://www.bcd-jeux.fr/recherche?controller=search&s=pokemon"
@@ -39,6 +46,7 @@ sites:
   troll2jeux:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.troll2jeux.com"
     start_urls:
       - "https://www.troll2jeux.com/recherche?controller=search&s=pokemon"
@@ -52,6 +60,7 @@ sites:
   dracaugames:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.dracaugames.com"
     scraper_class: generic_shopify
     rate_limit_rps: 0.5
@@ -60,6 +69,7 @@ sites:
   relictcg:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.relictcg.com"
     scraper_class: generic_shopify
     rate_limit_rps: 0.5
@@ -68,6 +78,7 @@ sites:
   pokelite:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.pokelite.fr"
     start_urls:
       - "https://www.pokelite.fr/?s=pokemon&post_type=product"
@@ -78,6 +89,7 @@ sites:
   ouvretonbooster:
     enabled: true
     priority: B
+    locale: FR
     base_url: "https://www.ouvretonbooster.com"
     start_urls:
       - "https://www.ouvretonbooster.com/?s=pokemon&post_type=product"
@@ -88,12 +100,13 @@ sites:
   amazon_fr:
     enabled: false  # observed returning empty/blocked responses to plain requests; best-effort only
     priority: A
+    locale: FR
     base_url: "https://www.amazon.fr"
     start_urls:
       - "https://www.amazon.fr/s?k=pokemon+30th+celebration"
       - "https://www.amazon.fr/s?k=pokemon+elite+trainer+box"
     scraper_class: amazon_fr
-    seller_filter: sold_by_amazon_only
+    only_seller: "Amazon"
     rate_limit_rps: 0.2
     timeout_s: 15
 
@@ -103,6 +116,7 @@ sites:
   smyths_fr:
     enabled: false  # Incapsula-protected, confirmed blocked
     priority: A
+    locale: FR
     base_url: "https://www.smythstoys.com"
     start_urls:
       - "https://www.smythstoys.com/fr/fr-fr/marques/pokemon/c/SM130208?brands=%5B%22Asmodee%22%5D"
@@ -113,6 +127,7 @@ sites:
   fnac:
     enabled: false  # Datadome-protected, confirmed blocked
     priority: A
+    locale: FR
     base_url: "https://www.fnac.com"
     start_urls: []
     scraper_class: generic_prestashop
@@ -122,6 +137,7 @@ sites:
   cultura:
     enabled: false  # bot-protected, confirmed blocked (403 on plain request)
     priority: A
+    locale: FR
     base_url: "https://www.cultura.com"
     start_urls: []
     scraper_class: generic_prestashop
@@ -131,6 +147,7 @@ sites:
   micromania:
     enabled: false  # Incapsula-protected, confirmed blocked
     priority: A
+    locale: FR
     base_url: "https://www.micromania.fr"
     start_urls: []
     scraper_class: generic_prestashop
@@ -140,6 +157,7 @@ sites:
   king_jouet:
     enabled: false  # bot-protected, confirmed blocked (403 on plain request)
     priority: A
+    locale: FR
     base_url: "https://www.king-jouet.com"
     start_urls: []
     scraper_class: generic_prestashop
@@ -149,6 +167,7 @@ sites:
   carrefour:
     enabled: false  # bot-protected, confirmed blocked (403 on plain request)
     priority: A
+    locale: FR
     base_url: "https://www.carrefour.fr"
     start_urls: []
     scraper_class: generic_prestashop
@@ -158,6 +177,7 @@ sites:
   leclerc:
     enabled: false  # pure Angular SPA, no server-rendered HTML at all - needs Playwright
     priority: A
+    locale: FR
     base_url: "https://www.e.leclerc"
     start_urls: []
     scraper_class: generic_prestashop
@@ -168,8 +188,236 @@ sites:
   picwictoys:
     enabled: false  # fingerprint-gated redirect (FingerprintJS), no static content served
     priority: A
+    locale: FR
     base_url: "https://www.picwictoys.fr"
     start_urls: []
     scraper_class: generic_prestashop
     rate_limit_rps: 0.2
     timeout_s: 15
+
+  # ===================== Belgium =====================
+  outpostbrussels:
+    enabled: true
+    priority: B
+    locale: BE
+    base_url: "https://outpostbrussels.be"
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.5
+    timeout_s: 15
+    # Confirmed live: this shop's catalog includes titles like
+    # "Pokémon · 30th Celebration - Greninja ex Box - EN" - real evidence the 30th Celebration
+    # EN print is already circulating in BE retail. Not yet added to the 4-site EN-tracking
+    # list per the task's explicit scope (Pokemart.be, PKMkaarten.nl, Bescards, PokiPair only) -
+    # worth adding there too if that scope should expand.
+
+  vinticards:
+    enabled: true
+    priority: B
+    locale: BE  # NL/BE-based, ships wide EU
+    base_url: "https://vinticards.com"
+    start_urls:
+      - "https://vinticards.com/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    rate_limit_rps: 0.3
+    timeout_s: 15
+    # Explicitly excluded from EN-tracking per task: language mix per listing not confirmed.
+
+  keytwo:
+    enabled: false  # Cloudflare "Just a moment..." challenge, confirmed blocked
+    priority: B
+    locale: BE
+    base_url: "https://keytwo.be"
+    start_urls: []
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  leptitpoucet:
+    enabled: false  # real WooCommerce shop, but ?s= search endpoint returns generic blog-search
+    # results (2 unrelated hits), not the product catalog search - needs a category URL not yet found
+    priority: B
+    locale: BE
+    base_url: "https://www.leptitpoucet.be"
+    start_urls:
+      - "https://www.leptitpoucet.be/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  belgiumcardsgame:
+    enabled: false  # real Odoo-based shop, but currently serving an "upgrade in progress"
+    # placeholder page (redirects to /_odoo/upgrade/...) - not operational right now
+    priority: B
+    locale: BE
+    base_url: "https://www.belgiumcardsgame.com"
+    start_urls: []
+    scraper_class: generic_shopify  # unconfirmed platform once the site is back up
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  smartoys:
+    enabled: false  # real, custom/osCommerce-style platform (product-price-sm, thumb-article-
+    # product CSS classes confirmed on homepage) - no verified search URL/selectors, UNCONFIRMED
+    priority: B
+    locale: BE
+    base_url: "https://www.smartoys.be"
+    start_urls: []
+    scraper_class: generic_prestashop  # placeholder, needs a real bespoke plugin
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  magicfranco:
+    enabled: false  # Cloudflare "Just a moment..." challenge, confirmed blocked
+    priority: B
+    locale: BE
+    base_url: "https://shop.magicfranco.be"
+    start_urls: []
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  eurotcg:
+    enabled: false  # real shop (Next.js), but no server-rendered product data on any page
+    # fetched (homepage and /collections/pokemon both return the same client-shell HTML) - needs
+    # Playwright, not implemented
+    priority: B
+    locale: BE
+    base_url: "https://eurotcg.com"
+    start_urls: []
+    scraper_class: generic_shopify  # unconfirmed, would need needs_browser: true
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  pokecardshop:
+    enabled: false  # real shop, Wix-based - no server-rendered product data, needs Playwright
+    priority: B
+    locale: BE
+    base_url: "https://www.pokecardshop.be"
+    start_urls: []
+    scraper_class: generic_prestashop  # unconfirmed, Wix has no generic scraper class here
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  pokemart:
+    enabled: false  # real shop (Cloudflare "you have been blocked"), confirmed blocked -
+    # one of the 4 designated EN-tracking sites per the task, kept configured (incl. language
+    # variant support) so it activates automatically if/when it becomes reachable
+    priority: B
+    locale: BE  # pokemart.fr / pokemart.be, explicitly stocks FR + English cards
+    base_url: "https://pokemart.fr"
+    start_urls:
+      - "https://pokemart.fr/recherche?controller=search&s=pokemon"
+    scraper_class: generic_prestashop
+    language_variants_enabled: true
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  # ===================== Netherlands =====================
+  debroergrot:
+    enabled: true
+    priority: B
+    locale: NL
+    base_url: "https://www.debroergrot.nl"
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.5
+    timeout_s: 15
+
+  bescards:
+    enabled: true
+    priority: B
+    locale: NL
+    base_url: "https://bescards.com"
+    scraper_class: generic_shopify
+    language_variants_enabled: true  # bilingual NL/EN site, one of the 4 confirmed EN-stock sites
+    rate_limit_rps: 0.5
+    timeout_s: 15
+
+  pokemagic:
+    enabled: true
+    priority: B
+    locale: NL
+    base_url: "https://pokemagic.nl"
+    start_urls:
+      - "https://pokemagic.nl/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  pkmkaarten:
+    enabled: true
+    priority: B
+    locale: NL
+    base_url: "https://www.pkmkaarten.nl"
+    start_urls:
+      - "https://www.pkmkaarten.nl/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    selectors:
+      listing_item: "li:has(.product-meta)"
+    language_variants_enabled: true  # explicitly stocks English cards, one of the 4 confirmed sites
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  ceescards:
+    enabled: false  # real, huge catalog (1025+ pokemon results per its own search page), but
+    # the search results grid is rendered client-side - only a small typeahead/autocomplete
+    # endpoint is present in static HTML, not the real result set. Needs Playwright.
+    priority: B
+    locale: NL
+    base_url: "https://ceescards.eu"
+    start_urls: []
+    scraper_class: generic_woocommerce  # unconfirmed, would need needs_browser: true
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  spellenrijk:
+    enabled: false  # Cloudflare "Just a moment..." challenge, confirmed blocked
+    priority: B
+    locale: NL
+    base_url: "https://www.spellenrijk.nl"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  mediamarkt_nl:
+    enabled: false  # Cloudflare "Just a moment..." challenge, confirmed blocked
+    priority: A
+    locale: NL
+    base_url: "https://www.mediamarkt.nl"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  bol_com:
+    enabled: false  # 403 (Cloudflare) on every plain request; marketplace filtering logic is
+    # implemented and config-driven (only_seller) but selectors are UNVERIFIED (see
+    # sites/bol_com.py docstring) - must be checked against a real page before enabling
+    priority: A
+    locale: NL
+    base_url: "https://www.bol.com"
+    start_urls:
+      - "https://www.bol.com/nl/nl/l/pokemon+trading+cards/N/8515+38158/"
+    scraper_class: bol_com
+    only_seller: "bol.com"
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  # ===================== Other EU =====================
+  pokipair:
+    enabled: true
+    priority: B
+    locale: IE
+    base_url: "https://www.pokipair.com"
+    start_urls:
+      - "https://www.pokipair.com/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    selectors:
+      title_link: "h3.fusion-title-heading a"
+    language_variants_enabled: true
+    default_language: "EN"  # PokiPair's whole English-TCG section is scoped to EN already
+    rate_limit_rps: 0.3
+    timeout_s: 15
+    # Note: this theme's search-result cards don't render a price at all (verified: none of the
+    # 8 sample listings had one) - offers from this site will have price=None. Still useful for
+    # new-product/restock/preorder detection, just not price-based alerts.

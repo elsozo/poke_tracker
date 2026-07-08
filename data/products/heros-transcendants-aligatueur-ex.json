@@ -1,14 +1,28 @@
 {
   "offers": {
-    "3c1bf1350dc3b192": {
+    "1f23938a0ffea2be": {
       "canonical_product_id": "heros-transcendants-aligatueur-ex",
-      "content_hash": "c16d3baf78774faf",
+      "content_hash": "a38726b3f05e66c2",
       "currency": "EUR",
-      "first_seen": "2026-07-08T13:25:25.300332+00:00",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-07-08T14:28:21.527248+00:00",
-      "price": 49.0,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 31.99,
+      "product_key": "1f23938a0ffea2be",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-mega-evolution-heros-transcendants-coffret-mega-aligatueur-ex-fr"
+    },
+    "3c1bf1350dc3b192": {
+      "canonical_product_id": "heros-transcendants-aligatueur-ex",
+      "content_hash": "37f1227a5f6e8046",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 49.9,
       "product_key": "3c1bf1350dc3b192",
       "seller": null,
       "site_id": "dracaugames",

@@ -28,8 +28,13 @@ class RunResult:
         self.offers_seen = 0
 
 
-def _classify(title: str, products: list[ProductConfig], settings: Settings):
-    result = heuristic_classifier.classify(title, products)
+def _classify(title: str, products: list[ProductConfig], settings: Settings, site_cfg: SiteConfig):
+    result = heuristic_classifier.classify(
+        title,
+        products,
+        language_variants_enabled=site_cfg.language_variants_enabled,
+        default_language=site_cfg.default_language,
+    )
     threshold = settings.classification.confidence_threshold * 100
     if result.confidence < threshold and llm_classifier.is_available():
         llm_result = llm_classifier.classify(title, products, settings)
@@ -78,13 +83,24 @@ def run(
             continue
 
         for listing in raw_listings:
-            classification = _classify(listing.title, products, settings)
-            if not should_track(listing, site_cfg, classification.is_pokemon):
-                continue
-            if classification.canonical_product_id is None:
-                continue
+            classification = _classify(listing.title, products, settings, site_cfg)
+            product_cfg = (
+                products_by_id.get(classification.canonical_product_id)
+                if classification.canonical_product_id
+                else None
+            )
 
-            product_cfg = products_by_id.get(classification.canonical_product_id)
+            # product_cfg is looked up before should_track so a configured single-card product
+            # can override a generic blocked keyword (e.g. "carte à l'unité") that would
+            # otherwise drop it - see should_track's matched_product/blocked_keywords params.
+            if not should_track(
+                listing,
+                site_cfg,
+                classification.is_pokemon,
+                matched_product=product_cfg,
+                blocked_keywords=tuple(settings.blocked_keywords_any),
+            ):
+                continue
             if product_cfg is None:
                 continue
 

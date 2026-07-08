@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "a7ed37c85c627e5b": {
+      "canonical_product_id": "ditto-premium-collection",
+      "content_hash": "fb89bbce4450cedf",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 59.99,
+      "product_key": "a7ed37c85c627e5b",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-ditto-premium-collection-en-s"
+    }
+  },
+  "product_id": "ditto-premium-collection"
+}

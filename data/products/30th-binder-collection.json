@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "e77487b1fc9ad470": {
+      "canonical_product_id": "30th-binder-collection",
+      "content_hash": "0b24ec7de45f2b0f",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 49.99,
+      "product_key": "e77487b1fc9ad470",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-binder-collection-en-s"
+    }
+  },
+  "product_id": "30th-binder-collection"
+}

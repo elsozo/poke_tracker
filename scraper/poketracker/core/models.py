@@ -42,6 +42,11 @@ class Offer(BaseModel):
     last_seen: datetime
 
 
+class ProductCategory(StrEnum):
+    SEALED = "sealed"
+    SINGLE_CARD = "single_card"
+
+
 class EventType(StrEnum):
     NEW_PRODUCT = "new_product"
     NEW_URL = "new_url"

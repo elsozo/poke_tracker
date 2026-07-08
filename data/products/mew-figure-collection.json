@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "013bd906742043de": {
+      "canonical_product_id": "mew-figure-collection",
+      "content_hash": "bbc833d33bc52509",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 39.99,
+      "product_key": "013bd906742043de",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-mew-figure-collection-en-s"
+    }
+  },
+  "product_id": "mew-figure-collection"
+}

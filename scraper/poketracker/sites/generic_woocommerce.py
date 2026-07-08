@@ -34,10 +34,18 @@ class GenericWooCommerceScraper(SiteScraper):
         listings: list[RawListing] = []
 
         for item in soup.select(selectors["listing_item"]):
-            anchor = item.select_one(selectors["title_link"])
+            # WooCommerce themes vary a lot in where the title text and its link actually live:
+            # standard themes link the heading directly; some wrap the whole card (image+title+
+            # price) in one anchor with the heading nested inside; others link only the product
+            # image and leave the heading as plain unlinked text. Try each in order rather than
+            # assume one shape, so most themes work without a per-site selector override.
+            heading = item.select_one("h1, h2, h3, h4")
+            anchor = (heading.select_one("a") if heading else None) or item.select_one(selectors["title_link"])
+            if anchor is None:
+                anchor = item.select_one("a[href]")
             if anchor is None or not anchor.get("href"):
                 continue
-            title = anchor.get_text(strip=True)
+            title = heading.get_text(strip=True) if heading else anchor.get_text(strip=True)
             listing_url = urljoin(cfg.base_url, anchor["href"])
 
             price_el = item.select_one(selectors["price_amount"])

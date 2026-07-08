@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "96f73509448d4657": {
+      "canonical_product_id": "30th-tech-sticker-lucario",
+      "content_hash": "242a300f5b161d25",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 24.99,
+      "product_key": "96f73509448d4657",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-tech-sticker-collection-lucario-en-s"
+    }
+  },
+  "product_id": "30th-tech-sticker-lucario"
+}

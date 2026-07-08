@@ -4,6 +4,16 @@ retry_backoff_factor: 0.5
 retry_status_forcelist: [429, 500, 502, 503, 504]
 significant_price_drop_pct: 10
 
+# Dropped unless the listing matches a configured single_card product (see
+# filtering/smart_filter.py should_track) - keeps random single-card marketplace noise out
+# of a catalog that's mostly about sealed product, without blocking the specific singles we
+# do configure in products.yaml.
+blocked_keywords_any:
+  - "carte à l'unité"
+  - "carte a l'unite"
+  - "single card"
+  - "losse kaart"
+
 user_agents:
   - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
   - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15"

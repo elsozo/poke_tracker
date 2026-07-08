@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "84751abcee668984": {
+      "canonical_product_id": "30th-2pack-blister",
+      "content_hash": "bfee4d193c2808ae",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T15:31:35.813841+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T15:31:35.813841+00:00",
+      "price": 14.99,
+      "product_key": "84751abcee668984",
+      "seller": null,
+      "site_id": "outpostbrussels",
+      "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-2-pack-blister-eevee-en-s"
+    }
+  },
+  "product_id": "30th-2pack-blister"
+}

@@ -12,7 +12,7 @@
 # type — none of these products have official pricing yet (2026-09 through 2026-12 releases).
 # Correct them once real pricing is announced; tolerance_pct absorbs some of the estimate error.
 
-x-set-30th: &set_30th ["30th", "célébration", "celebration", "30 ans"]
+x-set-30th: &set_30th ["30th", "célébration", "celebration", "30 ans", "30-jarig jubileum"]
 x-set-heros-transcendants: &set_heros ["héros transcendants", "heros transcendants", "me2.5", "me02.5", "me02-5"]
 x-set-rivalites-destinees: &set_rivalites ["rivalités destinées", "rivalites destinees", "ev10", "sv10"]
 
@@ -30,7 +30,10 @@ products:
   - id: pokemon-center-etb
     label: "Pokemon Center - Elite Trainer Box"
     aliases: ["Pokemon Center ETB", "Coffret Dresseur d'Elite Pokemon Center"]
-    match_keywords: [["pokemon center", "pokémon center"]]
+    # "pokemon center" alone is too loose - it also matches vintage Base Set 2 promo cards and
+    # Japan-region special boxes (confirmed false positives during live testing). Requires an
+    # ETB-type keyword too, same pattern as the other generic-product-type entries.
+    match_keywords: [["pokemon center", "pokémon center"], ["etb", "elite trainer", "dresseur d'elite", "dresseur d'élite"]]
     priority: 5
     release_date: "2026-09-16"
     msrp_eur: 54.99
@@ -376,3 +379,111 @@ products:
     priority: 2
     msrp_eur: 14.99
     tolerance_pct: 30
+
+  # ===================== 30th Celebration — English print variants =====================
+  # `language: EN` distinguishes these from the default (FR/NL) print of the same product.
+  # Matching only activates on sites with `language_variants_enabled: true` in sites.yaml
+  # (currently Pokemart.be, PKMkaarten.nl, Bescards, PokiPair) - see product_matching.py.
+  # Same match_keywords as the default-language sibling; the language marker in the title (or
+  # the site's default_language for unmarked titles) decides which one an offer matches to.
+  # Scoped to the priority-5 Wave 1/4 items to start, not the full 30th Celebration line -
+  # extend the same way for other items if needed.
+  - id: 30th-etb-en
+    label: "30th Celebration - Elite Trainer Box (English)"
+    aliases: ["Elite Trainer Box Celebrations English", "ETB Celebrations EN"]
+    match_keywords: [*set_30th, ["etb", "elite trainer", "dresseur d'elite", "dresseur d'élite"]]
+    priority: 5
+    release_date: "2026-09-16"
+    language: "EN"
+    msrp_eur: 54.99
+    tolerance_pct: 20
+
+  - id: 30th-poster-collection-en
+    label: "30th Celebration - Poster Collection (English)"
+    match_keywords: [*set_30th, ["poster"]]
+    priority: 5
+    release_date: "2026-09-16"
+    language: "EN"
+    msrp_eur: 14.99
+    tolerance_pct: 25
+
+  - id: 30th-sylveon-ex-box-en
+    label: "30th Celebration - Sylveon ex Box (English)"
+    match_keywords: [*set_30th, ["sylveon"]]
+    priority: 5
+    release_date: "2026-09-16"
+    language: "EN"
+    msrp_eur: 29.99
+    tolerance_pct: 20
+
+  - id: 30th-greninja-ex-box-en
+    label: "30th Celebration - Greninja ex Box (English)"
+    match_keywords: [*set_30th, ["greninja"]]
+    priority: 5
+    release_date: "2026-09-16"
+    language: "EN"
+    msrp_eur: 29.99
+    tolerance_pct: 20
+
+  - id: 30th-knock-out-collection-en
+    label: "30th Celebration - Knock Out Collection (English)"
+    match_keywords: [*set_30th, ["knock out"]]
+    priority: 5
+    release_date: "2026-09-16"
+    language: "EN"
+    msrp_eur: 19.99
+    tolerance_pct: 25
+
+  - id: 30th-upc-day-en
+    label: "30th Celebration - Ultra Premium Collection: Day (English)"
+    match_keywords: [*set_30th, ["ultra premium"], ["day", "jour"]]
+    priority: 5
+    release_date: "2026-11-06"
+    language: "EN"
+    msrp_eur: 119.99
+    tolerance_pct: 20
+
+  - id: 30th-upc-night-en
+    label: "30th Celebration - Ultra Premium Collection: Night (English)"
+    match_keywords: [*set_30th, ["ultra premium"], ["night", "nuit"]]
+    priority: 5
+    release_date: "2026-11-06"
+    language: "EN"
+    msrp_eur: 119.99
+    tolerance_pct: 20
+
+  # ===================== Single cards (30th Celebration) =====================
+  # category: single_card - exempts these from the "carte à l'unité" blocked-keyword filter
+  # (see settings.yaml + smart_filter.should_track) without opening the door to every random
+  # single-card listing. These are illustrative chase-card picks (this product line hasn't
+  # released and has no confirmed official promo/card list yet), not confirmed card numbers -
+  # adjust once the real singles market for this set is known.
+  - id: 30th-anniversary-promo-pikachu
+    label: "30th Anniversary Promo - Pikachu"
+    aliases: ["Pikachu 30th Anniversary Promo", "Pikachu Promo Célébration"]
+    match_keywords: [*set_30th, ["pikachu"], ["promo"]]
+    category: single_card
+    priority: 3
+    release_date: "2026-09-16"
+    msrp_eur: 4.99
+    tolerance_pct: 60
+
+  - id: 30th-mew-ex-sir-psa10
+    label: "30th Celebration - Mew ex Special Illustration Rare (PSA 10)"
+    aliases: ["Mew ex SIR PSA 10", "Mew ex Special Illustration Rare Graded PSA 10"]
+    match_keywords: [["mew"], ["ex"], ["sir", "special illustration"], ["psa 10", "psa10"]]
+    category: single_card
+    priority: 3
+    release_date: "2026-11-06"
+    msrp_eur: 150.0
+    tolerance_pct: 50
+
+  - id: 30th-sylveon-ex-sir-psa10
+    label: "30th Celebration - Sylveon ex Special Illustration Rare (PSA 10)"
+    aliases: ["Sylveon ex SIR PSA 10", "Sylveon ex Special Illustration Rare Graded PSA 10"]
+    match_keywords: [["sylveon"], ["ex"], ["sir", "special illustration"], ["psa 10", "psa10"]]
+    category: single_card
+    priority: 3
+    release_date: "2026-09-16"
+    msrp_eur: 120.0
+    tolerance_pct: 50
