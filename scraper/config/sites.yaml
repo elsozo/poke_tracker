@@ -1,0 +1,63 @@
+# Each entry maps a site_id to its scraping config. Adding a new PrestaShop/Shopify/WooCommerce
+# boutique shop needs no new Python code: pick the matching scraper_class and set start_urls.
+# See docs/ADDING_A_SITE.md for the full walkthrough.
+sites:
+  ludifolie:
+    enabled: true
+    priority: B
+    base_url: "https://www.ludifolie.com"
+    start_urls:
+      - "https://www.ludifolie.com/recherche?controller=search&s=pokemon"
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  variantes:
+    enabled: true
+    priority: B
+    base_url: "https://www.variantes.com"
+    start_urls:
+      - "https://www.variantes.com/recherche?controller=search&s=pokemon"
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  dracaugames:
+    enabled: true
+    priority: B
+    base_url: "https://www.dracaugames.com"
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.5
+    timeout_s: 15
+
+  pokelite:
+    enabled: true
+    priority: B
+    base_url: "https://www.pokelite.fr"
+    start_urls:
+      - "https://www.pokelite.fr/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  ouvretonbooster:
+    enabled: true
+    priority: B
+    base_url: "https://www.ouvretonbooster.com"
+    start_urls:
+      - "https://www.ouvretonbooster.com/?s=pokemon&post_type=product"
+    scraper_class: generic_woocommerce
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  amazon_fr:
+    enabled: false  # observed returning empty/blocked responses to plain requests; best-effort only
+    priority: A
+    base_url: "https://www.amazon.fr"
+    start_urls:
+      - "https://www.amazon.fr/s?k=pokemon+30th+celebration"
+      - "https://www.amazon.fr/s?k=pokemon+elite+trainer+box"
+    scraper_class: amazon_fr
+    seller_filter: sold_by_amazon_only
+    rate_limit_rps: 0.2
+    timeout_s: 15

@@ -1,0 +1,14 @@
+Pour scrapper il te faudra un serveur, full client ça marche pas bien pour scrapper tu vas te faire bloquer à beaucoup d'endroit et ça marcherait que quand l'app est ouverte
+Sinon un vieux pc qui tourne à la maison avec un script python qui scrappe
+Et push les données sur un truc en ligne (google sheet si pas trop de données)
+
+Ensuite app mobile qui recupe les données de ta google sheet
+Cheap serveur, pas besoin d'exposer ton PC sur le net
+Mieux encore tu peux faire tourner le script python de scraping dans GitHub actions workflow gratos, pas besoin du tout de vieux pc qui tourne à la maison
+
+Tu rajoute ton API key pour pousser les données sur Google sheets en secret et voilà c'est free
+
+Pour l'App tu demandes à un LLM de te faire une pwa (progressive web app, c'est un website qui avec des capacités en plus qui peut s'installer comme une app native), avec react JS qui se déploie en statique sur GitHub pages
+Ensuite t'utilises google chrome ou safari (pas Firefox) tu vas sur le website et tu cherches un peu y a une option pour installer sur l'écran d'accueil
+Pas besoin de te faire chier avec des build natif APK mes couilles ou le google/apple store
+T'as une expérience très proche de l'app, tu peux même envoyer des notifications

@@ -1,0 +1,59 @@
+# match_keywords: distinctive whole-word terms a listing title must contain to even be
+# considered for this product line — generic words ("pokemon", "coffret", "collection") are
+# deliberately excluded since they match almost every listing. See docs/ADDING_A_SITE.md.
+products:
+  - id: 30th-etb
+    label: "Pokemon 30th Celebration Elite Trainer Box"
+    aliases: ["ETB 30th anniversaire", "Coffret Dresseur d'Elite 30 ans", "Elite Trainer Box Celebrations"]
+    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    msrp_eur: 49.99
+    tolerance_pct: 20
+
+  - id: 30th-upc
+    label: "Pokemon 30th Celebration Ultra Premium Collection"
+    aliases: ["UPC 30th anniversaire", "Ultra Premium Collection Celebrations"]
+    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    msrp_eur: 119.99
+    tolerance_pct: 20
+
+  - id: 30th-booster-bundle
+    label: "Pokemon 30th Celebration Booster Bundle"
+    aliases: ["Booster Bundle 30 ans", "Booster Bundle Celebrations"]
+    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    msrp_eur: 24.99
+    tolerance_pct: 20
+
+  - id: 30th-binder-collection
+    label: "Pokemon 30th Celebration Binder Collection"
+    aliases: ["Binder Collection 30 ans", "Classeur Celebrations"]
+    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    msrp_eur: 34.99
+    tolerance_pct: 20
+
+  - id: 30th-figure-collection
+    label: "Pokemon 30th Celebration Figure Collection"
+    aliases: ["Figure Collection 30 ans", "Coffret Figurine Celebrations"]
+    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    msrp_eur: 29.99
+    tolerance_pct: 20
+
+  - id: mew-collection
+    label: "Pokemon Mew Collection"
+    aliases: ["Coffret Mew", "Mew ex Box"]
+    match_keywords: ["mew"]
+    msrp_eur: 39.99
+    tolerance_pct: 25
+
+  - id: mewtwo-collection
+    label: "Pokemon Mewtwo Collection"
+    aliases: ["Coffret Mewtwo", "Mewtwo ex Box"]
+    match_keywords: ["mewtwo"]
+    msrp_eur: 39.99
+    tolerance_pct: 25
+
+  - id: pokemon-center-exclusive
+    label: "Pokemon Center Exclusive"
+    aliases: ["Exclusivite Pokemon Center", "Pokemon Center Original"]
+    match_keywords: ["pokemon center", "pokémon center"]
+    msrp_eur: 59.99
+    tolerance_pct: 30

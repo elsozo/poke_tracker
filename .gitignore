@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node / webapp (PWA)
+node_modules/
+webapp/dist/
+webapp/dev-dist/
+*.local
+
+# Playwright
+scraper/.playwright-cache/
+test-results/
+playwright-report/
+
+# Secrets (VAPID keys, local .env)
+.env
+*.pem
