@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from poketracker.config import SiteConfig
 from poketracker.core.base_scraper import SiteScraper
 from poketracker.core.models import RawListing
+from poketracker.sites.price_parsing import parse_price
 from poketracker.sites.registry import register_site
 
 PREORDER_KEYWORDS = ("précommande", "precommande", "pre-order", "preorder")
@@ -15,7 +16,9 @@ _DEFAULT_SELECTORS = {
     "listing_item": ".product-miniature-wrapper, .js-product-miniature-wrapper",
     "title_link": ".product-title a",
     "price": "[itemprop=price]",
+    "price_fallback": ".price",
     "availability": "[itemprop=availability]",
+    "out_of_stock_flag": ".product-flag.out-of-stock, .out-of-stock, .unavailable",
 }
 
 
@@ -41,11 +44,17 @@ class GenericPrestaShopScraper(SiteScraper):
             title = link.get_text(strip=True)
             listing_url = urljoin(cfg.base_url, link["href"])
 
-            price_el = item.select_one(selectors["price"])
-            price = float(price_el.get_text(strip=True)) if price_el else None
+            price_el = item.select_one(selectors["price"]) or item.select_one(selectors["price_fallback"])
+            price = parse_price(price_el.get_text(strip=True)) if price_el else None
 
             availability_el = item.select_one(selectors["availability"])
-            in_stock = bool(availability_el) and "instock" in availability_el.get_text(strip=True).lower()
+            if availability_el is not None:
+                in_stock = "instock" in availability_el.get_text(strip=True).lower()
+            else:
+                # No microdata on this theme: absence of an explicit out-of-stock flag is
+                # taken as in-stock, since most PrestaShop themes only render a badge when
+                # an item is unavailable (see docs/ADDING_A_SITE.md).
+                in_stock = item.select_one(selectors["out_of_stock_flag"]) is None
 
             lowered_title = title.lower()
             is_preorder = any(kw in lowered_title for kw in PREORDER_KEYWORDS)

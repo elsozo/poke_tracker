@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from poketracker.config import SiteConfig
 from poketracker.core.base_scraper import SiteScraper
 from poketracker.core.models import RawListing
+from poketracker.sites.price_parsing import parse_price
 from poketracker.sites.registry import register_site
 
 PREORDER_KEYWORDS = ("précommande", "precommande", "pre-order", "preorder")
@@ -40,7 +41,7 @@ class GenericWooCommerceScraper(SiteScraper):
             listing_url = urljoin(cfg.base_url, anchor["href"])
 
             price_el = item.select_one(selectors["price_amount"])
-            price = _parse_french_price(price_el.get_text(strip=True)) if price_el else None
+            price = parse_price(price_el.get_text(strip=True)) if price_el else None
 
             item_classes = item.get("class", [])
             in_stock = "outofstock" not in item_classes
@@ -61,11 +62,3 @@ class GenericWooCommerceScraper(SiteScraper):
             )
 
         return listings
-
-
-def _parse_french_price(text: str) -> float | None:
-    cleaned = text.replace("\xa0", "").replace("€", "").replace(",", ".").strip()
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None

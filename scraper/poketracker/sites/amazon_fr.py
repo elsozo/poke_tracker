@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from poketracker.config import SiteConfig
 from poketracker.core.base_scraper import SiteScraper
 from poketracker.core.models import RawListing
+from poketracker.sites.price_parsing import parse_price
 from poketracker.sites.registry import register_site
 
 
@@ -34,7 +35,7 @@ class AmazonFrScraper(SiteScraper):
             price_el = item.select_one("span.a-price > span.a-offscreen")
             price = None
             if price_el:
-                price = _parse_price(price_el.get_text(strip=True))
+                price = parse_price(price_el.get_text(strip=True))
 
             availability_text = item.get_text(" ", strip=True).lower()
             in_stock = "indisponible" not in availability_text and "actuellement indisponible" not in availability_text
@@ -52,11 +53,3 @@ class AmazonFrScraper(SiteScraper):
             )
 
         return listings
-
-
-def _parse_price(text: str) -> float | None:
-    cleaned = text.replace("\xa0", "").replace("€", "").replace(",", ".").strip()
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None

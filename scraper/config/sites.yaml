@@ -19,6 +19,33 @@ sites:
     start_urls:
       - "https://www.variantes.com/recherche?controller=search&s=pokemon"
     scraper_class: generic_prestashop
+    selectors:
+      listing_item: "article.js-product-miniature"
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  bcdjeux:
+    enabled: true
+    priority: B
+    base_url: "https://www.bcd-jeux.fr"
+    start_urls:
+      - "https://www.bcd-jeux.fr/recherche?controller=search&s=pokemon"
+    scraper_class: generic_prestashop
+    selectors:
+      listing_item: "article.js-product-miniature"
+    rate_limit_rps: 0.3
+    timeout_s: 15
+
+  troll2jeux:
+    enabled: true
+    priority: B
+    base_url: "https://www.troll2jeux.com"
+    start_urls:
+      - "https://www.troll2jeux.com/recherche?controller=search&s=pokemon"
+    scraper_class: generic_prestashop
+    selectors:
+      listing_item: "article.js-product-miniature"
+      title_link: "h3.s_title_block a"
     rate_limit_rps: 0.3
     timeout_s: 15
 
@@ -26,6 +53,14 @@ sites:
     enabled: true
     priority: B
     base_url: "https://www.dracaugames.com"
+    scraper_class: generic_shopify
+    rate_limit_rps: 0.5
+    timeout_s: 15
+
+  relictcg:
+    enabled: true
+    priority: B
+    base_url: "https://www.relictcg.com"
     scraper_class: generic_shopify
     rate_limit_rps: 0.5
     timeout_s: 15
@@ -59,5 +94,82 @@ sites:
       - "https://www.amazon.fr/s?k=pokemon+elite+trainer+box"
     scraper_class: amazon_fr
     seller_filter: sold_by_amazon_only
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  # --- Disabled: confirmed blocked by enterprise bot protection (Datadome/Incapsula) or pure
+  # JS SPA with no server-rendered HTML during probing. No evasion attempted; left here so
+  # coverage status is visible rather than silently missing. See docs/ADDING_A_SITE.md.
+  smyths_fr:
+    enabled: false  # Incapsula-protected, confirmed blocked
+    priority: A
+    base_url: "https://www.smythstoys.com"
+    start_urls:
+      - "https://www.smythstoys.com/fr/fr-fr/marques/pokemon/c/SM130208?brands=%5B%22Asmodee%22%5D"
+    scraper_class: generic_prestashop  # placeholder; needs_browser + real selectors once unblocked
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  fnac:
+    enabled: false  # Datadome-protected, confirmed blocked
+    priority: A
+    base_url: "https://www.fnac.com"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  cultura:
+    enabled: false  # bot-protected, confirmed blocked (403 on plain request)
+    priority: A
+    base_url: "https://www.cultura.com"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  micromania:
+    enabled: false  # Incapsula-protected, confirmed blocked
+    priority: A
+    base_url: "https://www.micromania.fr"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  king_jouet:
+    enabled: false  # bot-protected, confirmed blocked (403 on plain request)
+    priority: A
+    base_url: "https://www.king-jouet.com"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  carrefour:
+    enabled: false  # bot-protected, confirmed blocked (403 on plain request)
+    priority: A
+    base_url: "https://www.carrefour.fr"
+    start_urls: []
+    scraper_class: generic_prestashop
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  leclerc:
+    enabled: false  # pure Angular SPA, no server-rendered HTML at all - needs Playwright
+    priority: A
+    base_url: "https://www.e.leclerc"
+    start_urls: []
+    scraper_class: generic_prestashop
+    needs_browser: true
+    rate_limit_rps: 0.2
+    timeout_s: 15
+
+  picwictoys:
+    enabled: false  # fingerprint-gated redirect (FingerprintJS), no static content served
+    priority: A
+    base_url: "https://www.picwictoys.fr"
+    start_urls: []
+    scraper_class: generic_prestashop
     rate_limit_rps: 0.2
     timeout_s: 15
