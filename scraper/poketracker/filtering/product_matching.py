@@ -13,15 +13,24 @@ def _candidate_strings(product: ProductConfig) -> list[str]:
     return [product.label, *product.aliases]
 
 
+def _contains_word(lowered_title: str, keyword: str) -> bool:
+    return re.search(rf"\b{re.escape(keyword.lower())}\b", lowered_title) is not None
+
+
 def _has_keyword(title: str, product: ProductConfig) -> bool:
-    """A title is only eligible to match a product if one of its distinctive keywords is
-    present as a whole word. Generic words shared by every Pokemon box ("coffret", "pokemon",
-    "collection"...) are deliberately NOT enough — fuzzy scoring alone scores those far too
-    high against short aliases and misclassifies unrelated boxes (see products.yaml keywords)."""
+    """A title is only eligible to match a product if it satisfies every configured keyword
+    group. Generic words shared by every Pokemon box ("coffret", "pokemon", "collection"...)
+    are deliberately NOT enough on their own — fuzzy scoring alone scores those far too high
+    against short aliases and misclassifies unrelated boxes. A generic product type like "ETB"
+    is only meaningful once scoped to a set, e.g. groups=[["etb"], ["héros transcendants", "me2.5"]]."""
     if not product.match_keywords:
         return True  # no keywords configured: fall back to pure fuzzy matching
     lowered = title.lower()
-    return any(re.search(rf"\b{re.escape(kw.lower())}\b", lowered) for kw in product.match_keywords)
+    for group in product.match_keywords:
+        keywords = [group] if isinstance(group, str) else group
+        if not any(_contains_word(lowered, kw) for kw in keywords):
+            return False
+    return True
 
 
 def match_product(

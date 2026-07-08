@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "95acff1dea097e9c": {
+      "canonical_product_id": "heros-transcendants-booster",
+      "content_hash": "957c8483675e87eb",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T13:25:25.300332+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T13:25:25.300332+00:00",
+      "price": 11.9,
+      "product_key": "95acff1dea097e9c",
+      "seller": null,
+      "site_id": "dracaugames",
+      "url": "https://www.dracaugames.com/products/pokemon-booster-me02-5-mega-evolutions-heros-transcendants"
+    }
+  },
+  "product_id": "heros-transcendants-booster"
+}

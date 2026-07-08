@@ -25,7 +25,13 @@ class ProductConfig(BaseModel):
     id: str
     label: str
     aliases: list[str] = Field(default_factory=list)
-    match_keywords: list[str] = Field(default_factory=list)
+    # Each element is an OR-group (any keyword in it counts as a hit); a title must hit
+    # EVERY group to match (AND across groups). A plain string is shorthand for a 1-item
+    # OR-group. This is what lets "ETB" (too generic alone) be scoped to a specific set via
+    # a second group like ["héros transcendants", "me2.5"].
+    match_keywords: list[str | list[str]] = Field(default_factory=list)
+    priority: int = 3  # 1-5, from the user's own star ratings; informational for now
+    release_date: str | None = None  # ISO date, informational
     msrp_eur: float
     tolerance_pct: float = 20.0
 

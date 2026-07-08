@@ -1,59 +1,364 @@
-# match_keywords: distinctive whole-word terms a listing title must contain to even be
-# considered for this product line — generic words ("pokemon", "coffret", "collection") are
-# deliberately excluded since they match almost every listing. See docs/ADDING_A_SITE.md.
+# match_keywords: a list of AND-groups; each group is a list of OR'd synonyms (a plain string
+# is shorthand for a 1-item group). A title must hit EVERY group to match. This is what lets a
+# generic product type like "ETB" — which alone would match every Pokemon set ever sold — be
+# scoped to one specific set via a second group, e.g. [["etb"], ["héros transcendants", "me2.5"]].
+# Generic words ("coffret", "pokemon", "collection") are deliberately never enough on their own.
+#
+# priority: 1-5 star rating, taken directly from the user's own wishlist. Informational for now
+# (not yet wired into filtering/notification, but useful for a future dashboard sort order).
+# release_date: ISO date where known; informational only.
+#
+# All msrp_eur values below are ESTIMATES based on typical prior-set French MSRP for that product
+# type — none of these products have official pricing yet (2026-09 through 2026-12 releases).
+# Correct them once real pricing is announced; tolerance_pct absorbs some of the estimate error.
+
+x-set-30th: &set_30th ["30th", "célébration", "celebration", "30 ans"]
+x-set-heros-transcendants: &set_heros ["héros transcendants", "heros transcendants", "me2.5", "me02.5", "me02-5"]
+x-set-rivalites-destinees: &set_rivalites ["rivalités destinées", "rivalites destinees", "ev10", "sv10"]
+
 products:
+  # ===================== 30th Anniversary Celebration — Wave 1 (2026-09-16) =====================
   - id: 30th-etb
-    label: "Pokemon 30th Celebration Elite Trainer Box"
-    aliases: ["ETB 30th anniversaire", "Coffret Dresseur d'Elite 30 ans", "Elite Trainer Box Celebrations"]
-    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
-    msrp_eur: 49.99
+    label: "30th Celebration - Elite Trainer Box"
+    aliases: ["Coffret Dresseur d'Elite 30 ans", "ETB Celebrations"]
+    match_keywords: [*set_30th, ["etb", "elite trainer", "dresseur d'elite", "dresseur d'élite"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 54.99
     tolerance_pct: 20
 
-  - id: 30th-upc
-    label: "Pokemon 30th Celebration Ultra Premium Collection"
-    aliases: ["UPC 30th anniversaire", "Ultra Premium Collection Celebrations"]
-    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
-    msrp_eur: 119.99
+  - id: pokemon-center-etb
+    label: "Pokemon Center - Elite Trainer Box"
+    aliases: ["Pokemon Center ETB", "Coffret Dresseur d'Elite Pokemon Center"]
+    match_keywords: [["pokemon center", "pokémon center"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 54.99
     tolerance_pct: 20
 
+  - id: 30th-poster-collection
+    label: "30th Celebration - Poster Collection"
+    match_keywords: [*set_30th, ["poster"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 14.99
+    tolerance_pct: 25
+
+  - id: 30th-tech-sticker-lucario
+    label: "30th Celebration - Tech Sticker Collection: Lucario"
+    match_keywords: [["tech sticker"], ["lucario"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 9.99
+    tolerance_pct: 25
+
+  - id: 30th-tech-sticker-noadkoko
+    label: "30th Celebration - Tech Sticker Collection: Noadkoko d'Alola"
+    match_keywords: [["tech sticker"], ["noadkoko"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 9.99
+    tolerance_pct: 25
+
+  - id: 30th-sylveon-ex-box
+    label: "30th Celebration - Sylveon ex Box"
+    match_keywords: [*set_30th, ["sylveon"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 29.99
+    tolerance_pct: 20
+
+  - id: 30th-greninja-ex-box
+    label: "30th Celebration - Greninja ex Box"
+    match_keywords: [*set_30th, ["greninja"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 29.99
+    tolerance_pct: 20
+
+  - id: 30th-knock-out-collection
+    label: "30th Celebration - Knock Out Collection"
+    match_keywords: [*set_30th, ["knock out"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 19.99
+    tolerance_pct: 25
+
+  - id: 30th-2pack-blister
+    label: "30th Celebration - 2-Pack Blister"
+    match_keywords: [*set_30th, ["2-pack", "2 pack", "duo pack"]]
+    priority: 5
+    release_date: "2026-09-16"
+    msrp_eur: 9.99
+    tolerance_pct: 30
+
+  # ===================== 30th Anniversary Celebration — Wave 2 (2026-10-02) =====================
   - id: 30th-booster-bundle
-    label: "Pokemon 30th Celebration Booster Bundle"
-    aliases: ["Booster Bundle 30 ans", "Booster Bundle Celebrations"]
-    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    label: "30th Celebration - Booster Bundle"
+    match_keywords: [*set_30th, ["booster bundle"]]
+    priority: 4
+    release_date: "2026-10-02"
     msrp_eur: 24.99
     tolerance_pct: 20
 
   - id: 30th-binder-collection
-    label: "Pokemon 30th Celebration Binder Collection"
-    aliases: ["Binder Collection 30 ans", "Classeur Celebrations"]
-    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
+    label: "30th Celebration - Binder Collection"
+    match_keywords: [*set_30th, ["binder", "classeur"]]
+    priority: 4
+    release_date: "2026-10-02"
     msrp_eur: 34.99
     tolerance_pct: 20
 
-  - id: 30th-figure-collection
-    label: "Pokemon 30th Celebration Figure Collection"
-    aliases: ["Figure Collection 30 ans", "Coffret Figurine Celebrations"]
-    match_keywords: ["30th", "célébration", "celebration", "30 ans"]
-    msrp_eur: 29.99
+  - id: 30th-mini-tin
+    label: "30th Celebration - Mini Tin"
+    match_keywords: [*set_30th, ["mini tin"]]
+    priority: 4
+    release_date: "2026-10-02"
+    msrp_eur: 9.99
+    tolerance_pct: 25
+
+  # ===================== 30th Anniversary Celebration — Wave 3 (2026-10-30) =====================
+  - id: 30th-espeon-battle-deck
+    label: "30th Celebration - Espeon ex Battle Deck"
+    match_keywords: [["espeon"], ["battle deck", "deck de combat"]]
+    priority: 3
+    release_date: "2026-10-30"
+    msrp_eur: 19.99
+    tolerance_pct: 25
+
+  - id: 30th-umbreon-battle-deck
+    label: "30th Celebration - Umbreon ex Battle Deck"
+    match_keywords: [["umbreon"], ["battle deck", "deck de combat"]]
+    priority: 3
+    release_date: "2026-10-30"
+    msrp_eur: 19.99
+    tolerance_pct: 25
+
+  # ===================== 30th Anniversary Celebration — Wave 4 (2026-11-06) =====================
+  - id: 30th-upc-day
+    label: "30th Celebration - Ultra Premium Collection: Day"
+    match_keywords: [*set_30th, ["ultra premium"], ["day", "jour"]]
+    priority: 5
+    release_date: "2026-11-06"
+    msrp_eur: 119.99
     tolerance_pct: 20
 
-  - id: mew-collection
-    label: "Pokemon Mew Collection"
-    aliases: ["Coffret Mew", "Mew ex Box"]
-    match_keywords: ["mew"]
+  - id: 30th-upc-night
+    label: "30th Celebration - Ultra Premium Collection: Night"
+    match_keywords: [*set_30th, ["ultra premium"], ["night", "nuit"]]
+    priority: 5
+    release_date: "2026-11-06"
+    msrp_eur: 119.99
+    tolerance_pct: 20
+
+  - id: mew-figure-collection
+    label: "Pokemon Mew Figure Collection"
+    match_keywords: [["mew"], ["figure collection", "figurine"]]
+    priority: 4
+    release_date: "2026-11-06"
     msrp_eur: 39.99
     tolerance_pct: 25
 
-  - id: mewtwo-collection
-    label: "Pokemon Mewtwo Collection"
-    aliases: ["Coffret Mewtwo", "Mewtwo ex Box"]
-    match_keywords: ["mewtwo"]
+  - id: mewtwo-figure-collection
+    label: "Pokemon Mewtwo Figure Collection"
+    match_keywords: [["mewtwo"], ["figure collection", "figurine"]]
+    priority: 4
+    release_date: "2026-11-06"
     msrp_eur: 39.99
     tolerance_pct: 25
 
-  - id: pokemon-center-exclusive
-    label: "Pokemon Center Exclusive"
-    aliases: ["Exclusivite Pokemon Center", "Pokemon Center Original"]
-    match_keywords: ["pokemon center", "pokémon center"]
+  - id: ditto-premium-collection
+    label: "Pokemon Ditto Premium Collection"
+    match_keywords: [["ditto"], ["premium collection", "collection premium"]]
+    priority: 3
+    release_date: "2026-11-06"
+    msrp_eur: 44.99
+    tolerance_pct: 25
+
+  # ===================== 30th Anniversary Celebration — Wave 5 (2026-12-04) =====================
+  # Sylveon/Greninja also appear as ex Boxes in Wave 1 — the "tin" keyword group disambiguates.
+  - id: greninja-ex-tin
+    label: "Pokemon ex Tin - Greninja"
+    match_keywords: [["greninja"], ["tin"]]
+    priority: 3
+    release_date: "2026-12-04"
+    msrp_eur: 14.99
+    tolerance_pct: 25
+
+  - id: sylveon-ex-tin
+    label: "Pokemon ex Tin - Sylveon"
+    match_keywords: [["sylveon"], ["tin"]]
+    priority: 3
+    release_date: "2026-12-04"
+    msrp_eur: 14.99
+    tolerance_pct: 25
+
+  # ===================== Heros Transcendants (ME2.5) =====================
+  - id: heros-transcendants-etb
+    label: "Heros Transcendants - Elite Trainer Box"
+    match_keywords: [*set_heros, ["etb", "dresseur d'elite", "dresseur d'élite"]]
+    priority: 5
+    msrp_eur: 54.99
+    tolerance_pct: 20
+
+  - id: heros-transcendants-booster-bundle
+    label: "Heros Transcendants - Booster Bundle (6 boosters)"
+    match_keywords: [*set_heros, ["booster bundle"]]
+    priority: 5
+    msrp_eur: 24.99
+    tolerance_pct: 20
+
+  - id: heros-transcendants-poster-lucario
+    label: "Heros Transcendants - Coffret Poster Premium Mega-Lucario"
+    match_keywords: [["poster premium", "poster"], ["lucario"]]
+    priority: 4
+    msrp_eur: 29.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-poster-gardevoir
+    label: "Heros Transcendants - Coffret Poster Premium Mega-Gardevoir"
+    match_keywords: [["poster premium", "poster"], ["gardevoir"]]
+    priority: 4
+    msrp_eur: 29.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-aligatueur-ex
+    label: "Heros Transcendants - Coffret Mega-Aligatueur ex"
+    match_keywords: [["aligatueur"]]
+    priority: 4
+    msrp_eur: 24.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-florizarre-ex
+    label: "Heros Transcendants - Coffret Mega-Florizarre ex"
+    match_keywords: [["florizarre"]]
+    priority: 4
+    msrp_eur: 24.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-dracaufeu-x-ex
+    label: "Heros Transcendants - Coffret Mega-Dracaufeu X ex"
+    match_keywords: [["dracaufeu x", "dracaufeu-x"]]
+    priority: 4
+    msrp_eur: 24.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-mini-tin
+    label: "Heros Transcendants - Mini Tin (5 visuels)"
+    match_keywords: [*set_heros, ["mini tin"]]
+    priority: 3
+    msrp_eur: 9.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-mini-tin-display
+    label: "Heros Transcendants - Display de Mini Tins"
+    match_keywords: [*set_heros, ["mini tin"], ["display"]]
+    priority: 3
     msrp_eur: 59.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-tripack-salameche
+    label: "Heros Transcendants - Tripack Salameche"
+    match_keywords: [["tripack", "tri-pack"], ["salameche", "salamèche"]]
+    priority: 3
+    msrp_eur: 12.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-tripack-fantominus
+    label: "Heros Transcendants - Tripack Fantominus"
+    match_keywords: [["tripack", "tri-pack"], ["fantominus"]]
+    priority: 3
+    msrp_eur: 12.99
+    tolerance_pct: 25
+
+  - id: heros-transcendants-blister
+    label: "Heros Transcendants - Blister"
+    match_keywords: [*set_heros, ["blister"]]
+    priority: 2
+    msrp_eur: 6.99
+    tolerance_pct: 30
+
+  - id: heros-transcendants-booster
+    label: "Heros Transcendants - Booster individuel"
+    match_keywords: [*set_heros, ["booster"]]
+    priority: 2
+    msrp_eur: 4.99
+    tolerance_pct: 30
+
+  - id: heros-transcendants-display
+    label: "Heros Transcendants - Display de boosters (36)"
+    match_keywords: [*set_heros, ["display"]]
+    priority: 2
+    msrp_eur: 144.99
+    tolerance_pct: 20
+
+  # ===================== Rivalites Destinees (EV10) =====================
+  - id: rivalites-destinees-etb
+    label: "Rivalites Destinees - Elite Trainer Box"
+    match_keywords: [*set_rivalites, ["etb", "dresseur d'elite", "dresseur d'élite"]]
+    priority: 5
+    msrp_eur: 54.99
+    tolerance_pct: 20
+
+  - id: rivalites-destinees-booster-bundle
+    label: "Rivalites Destinees - Booster Bundle"
+    match_keywords: [*set_rivalites, ["booster bundle"]]
+    priority: 5
+    msrp_eur: 24.99
+    tolerance_pct: 20
+
+  - id: rivalites-destinees-display
+    label: "Rivalites Destinees - Booster Box / Display (36 boosters)"
+    match_keywords: [*set_rivalites, ["display", "booster box"]]
+    priority: 5
+    msrp_eur: 144.99
+    tolerance_pct: 20
+
+  - id: rivalites-destinees-3pack-blister
+    label: "Rivalites Destinees - 3-Pack Blister"
+    match_keywords: [*set_rivalites, ["3-pack", "3 pack", "tripack"]]
+    priority: 4
+    msrp_eur: 17.99
+    tolerance_pct: 25
+
+  - id: rivalites-destinees-checklane-blister
+    label: "Rivalites Destinees - Checklane Blister"
+    match_keywords: [*set_rivalites, ["checklane"]]
+    priority: 4
+    msrp_eur: 11.99
+    tolerance_pct: 25
+
+  - id: rivalites-destinees-sleeved-booster
+    label: "Rivalites Destinees - Sleeved Booster"
+    match_keywords: [*set_rivalites, ["sleeved", "protège-cartes"]]
+    priority: 4
+    msrp_eur: 6.99
+    tolerance_pct: 30
+
+  - id: rivalites-destinees-build-battle-box
+    label: "Rivalites Destinees - Build & Battle Box"
+    match_keywords: [*set_rivalites, ["build & battle box", "build and battle box"]]
+    priority: 3
+    msrp_eur: 24.99
+    tolerance_pct: 25
+
+  - id: rivalites-destinees-build-battle-stadium
+    label: "Rivalites Destinees - Build & Battle Stadium"
+    match_keywords: [*set_rivalites, ["build & battle stadium", "build and battle stadium"]]
+    priority: 3
+    msrp_eur: 59.99
+    tolerance_pct: 25
+
+  - id: rivalites-destinees-portfolio
+    label: "Rivalites Destinees - Portfolio"
+    match_keywords: [*set_rivalites, ["portfolio", "album"]]
+    priority: 2
+    msrp_eur: 14.99
+    tolerance_pct: 30
+
+  - id: rivalites-destinees-decks
+    label: "Rivalites Destinees - Decks"
+    match_keywords: [*set_rivalites, ["deck"]]
+    priority: 2
+    msrp_eur: 14.99
     tolerance_pct: 30

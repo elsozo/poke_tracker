@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "3bbca551e6492a72": {
+      "canonical_product_id": "heros-transcendants-display",
+      "content_hash": "ac6afa4e716e7c73",
+      "currency": "EUR",
+      "first_seen": "2026-07-08T13:25:25.300332+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-07-08T13:25:25.300332+00:00",
+      "price": 799.9,
+      "product_key": "3bbca551e6492a72",
+      "seller": null,
+      "site_id": "dracaugames",
+      "url": "https://www.dracaugames.com/products/pokemon-display-de-10-bundle-lot-de-boosters-me02-5-heros-transcendants"
+    }
+  },
+  "product_id": "heros-transcendants-display"
+}
