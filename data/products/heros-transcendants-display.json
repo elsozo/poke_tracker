@@ -2,13 +2,13 @@
   "offers": {
     "3bbca551e6492a72": {
       "canonical_product_id": "heros-transcendants-display",
-      "content_hash": "fde81d70bf1cb4bd",
+      "content_hash": "7a5fddc1a745e487",
       "currency": "EUR",
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-07-18T02:02:41.384691+00:00",
-      "price": 828.0,
+      "last_seen": "2026-07-18T05:20:21.660743+00:00",
+      "price": 827.0,
       "product_key": "3bbca551e6492a72",
       "seller": null,
       "site_id": "dracaugames",
