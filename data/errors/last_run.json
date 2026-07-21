@@ -4,8 +4,8 @@
       "error": "403 Client Error: Forbidden for url: https://www.troll2jeux.com/recherche?controller=search&s=pokemon",
       "site_id": "troll2jeux",
       "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/poke_tracker/poke_tracker/scraper/poketracker/core/runner.py\", line 76, in run\n    raw_listings = scraper.fetch_and_parse(site_cfg, session, settings, fetch_fn)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/poke_tracker/poke_tracker/scraper/poketracker/core/base_scraper.py\", line 32, in fetch_and_parse\n    html = fetch_fn(session, url, settings, timeout_s=cfg.timeout_s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/poke_tracker/poke_tracker/scraper/poketracker/core/runner.py\", line 72, in fetch_fn\n    return fetch(sess, url, cfg_settings, timeout_s=timeout_s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/poke_tracker/poke_tracker/scraper/poketracker/core/http_client.py\", line 50, in fetch\n    response.raise_for_status()\n  File \"/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/requests/models.py\", line 1167, in raise_for_status\n    raise HTTPError(http_error_msg, response=self)\nrequests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.troll2jeux.com/recherche?controller=search&s=pokemon\n",
-      "ts": "2026-07-21T22:51:42.955284+00:00"
+      "ts": "2026-07-21T23:53:24.065111+00:00"
     }
   ],
-  "run_at": "2026-07-21T22:51:58.250026"
+  "run_at": "2026-07-21T23:53:37.251099"
 }
