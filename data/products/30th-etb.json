@@ -7,12 +7,26 @@
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-07-27T10:47:23.865286+00:00",
+      "last_seen": "2026-07-27T13:36:26.812780+00:00",
       "price": 69.99,
       "product_key": "ba2aa3f1a9dbfc1c",
       "seller": null,
       "site_id": "outpostbrussels",
       "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-elite-trainer-box-en-s"
+    },
+    "fb0e9cdac395bb3c": {
+      "canonical_product_id": "30th-etb",
+      "content_hash": "51088ae4d4e38635",
+      "currency": "EUR",
+      "first_seen": "2026-07-27T13:36:26.812780+00:00",
+      "in_stock": true,
+      "is_preorder": false,
+      "last_seen": "2026-07-27T13:36:26.812780+00:00",
+      "price": null,
+      "product_key": "fb0e9cdac395bb3c",
+      "seller": null,
+      "site_id": "pkmkaarten",
+      "url": "https://www.pkmkaarten.nl/product/pokemon-30th-celebration-elite-trainer-box/"
     }
   },
   "product_id": "30th-etb"
