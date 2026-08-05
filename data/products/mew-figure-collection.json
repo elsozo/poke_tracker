@@ -2,13 +2,13 @@
   "offers": {
     "013bd906742043de": {
       "canonical_product_id": "mew-figure-collection",
-      "content_hash": "bbc833d33bc52509",
+      "content_hash": "f3ecf3e4c45f7b6f",
       "currency": "EUR",
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-08-05T13:59:32.591469+00:00",
-      "price": 39.99,
+      "last_seen": "2026-08-05T16:03:58.940184+00:00",
+      "price": 84.99,
       "product_key": "013bd906742043de",
       "seller": null,
       "site_id": "outpostbrussels",
