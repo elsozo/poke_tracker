@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "c148e6c9ede9f3c4": {
+      "canonical_product_id": "30th-upc-night",
+      "content_hash": "51088ae4d4e38635",
+      "currency": "EUR",
+      "first_seen": "2026-08-22T11:16:29.307368+00:00",
+      "in_stock": true,
+      "is_preorder": false,
+      "last_seen": "2026-08-22T11:16:29.307368+00:00",
+      "price": null,
+      "product_key": "c148e6c9ede9f3c4",
+      "seller": null,
+      "site_id": "pkmkaarten",
+      "url": "https://www.pkmkaarten.nl/product/pokemon-30th-celebration-ultra-premium-collection-night/"
+    }
+  },
+  "product_id": "30th-upc-night"
+}

@@ -7,12 +7,26 @@
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-08-22T10:17:51.747908+00:00",
+      "last_seen": "2026-08-22T11:16:29.307368+00:00",
       "price": 49.99,
       "product_key": "45601997caad2a0a",
       "seller": null,
       "site_id": "outpostbrussels",
       "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-espeon-ex-battle-deck-en-s"
+    },
+    "6e31484f33f5a9a5": {
+      "canonical_product_id": "30th-espeon-battle-deck",
+      "content_hash": "51088ae4d4e38635",
+      "currency": "EUR",
+      "first_seen": "2026-08-22T11:16:29.307368+00:00",
+      "in_stock": true,
+      "is_preorder": false,
+      "last_seen": "2026-08-22T11:16:29.307368+00:00",
+      "price": null,
+      "product_key": "6e31484f33f5a9a5",
+      "seller": null,
+      "site_id": "pkmkaarten",
+      "url": "https://www.pkmkaarten.nl/product/pokemon-30th-celebration-battle-deck-espeon-ex/"
     }
   },
   "product_id": "30th-espeon-battle-deck"

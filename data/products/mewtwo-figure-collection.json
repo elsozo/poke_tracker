@@ -7,12 +7,26 @@
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-08-22T10:17:51.747908+00:00",
+      "last_seen": "2026-08-22T11:16:29.307368+00:00",
       "price": 84.99,
       "product_key": "b2962cb5f2af3b0e",
       "seller": null,
       "site_id": "outpostbrussels",
       "url": "https://outpostbrussels.be/products/pokemon-30th-celebration-mewtwo-figure-collection-en-s"
+    },
+    "c4999aca8498b52d": {
+      "canonical_product_id": "mewtwo-figure-collection",
+      "content_hash": "51088ae4d4e38635",
+      "currency": "EUR",
+      "first_seen": "2026-08-22T11:16:29.307368+00:00",
+      "in_stock": true,
+      "is_preorder": false,
+      "last_seen": "2026-08-22T11:16:29.307368+00:00",
+      "price": null,
+      "product_key": "c4999aca8498b52d",
+      "seller": null,
+      "site_id": "pkmkaarten",
+      "url": "https://www.pkmkaarten.nl/product/pokemon-30th-celebration-figure-collection-mewtwo/"
     }
   },
   "product_id": "mewtwo-figure-collection"
