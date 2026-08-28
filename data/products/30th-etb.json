@@ -2,12 +2,12 @@
   "offers": {
     "ba2aa3f1a9dbfc1c": {
       "canonical_product_id": "30th-etb",
-      "content_hash": "4dc925081d6aef2d",
+      "content_hash": "f2d2d15ff9941eec",
       "currency": "EUR",
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
-      "in_stock": false,
+      "in_stock": true,
       "is_preorder": false,
-      "last_seen": "2026-08-28T08:45:10.265750+00:00",
+      "last_seen": "2026-08-28T20:38:34.754948+00:00",
       "price": 114.99,
       "product_key": "ba2aa3f1a9dbfc1c",
       "seller": null,
