@@ -7,7 +7,7 @@
       "first_seen": "2026-08-05T16:03:58.940184+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-08-31T10:25:12.677077+00:00",
+      "last_seen": "2026-08-31T17:49:13.157332+00:00",
       "price": 52.99,
       "product_key": "12487e264fc450ef",
       "seller": null,
@@ -35,7 +35,7 @@
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-08-31T10:25:12.677077+00:00",
+      "last_seen": "2026-08-31T17:49:13.157332+00:00",
       "price": 52.99,
       "product_key": "3f257bd1c9d672c5",
       "seller": null,
@@ -55,6 +55,20 @@
       "seller": null,
       "site_id": "pkmkaarten",
       "url": "https://www.pkmkaarten.nl/product/pokemon-30th-celebration-sylveon-ex-tin/"
+    },
+    "c1fae1bd651a2947": {
+      "canonical_product_id": "30th-sylveon-ex-box",
+      "content_hash": "be53ced4b96b3639",
+      "currency": "EUR",
+      "first_seen": "2026-08-31T17:49:13.157332+00:00",
+      "in_stock": true,
+      "is_preorder": true,
+      "last_seen": "2026-08-31T17:49:13.157332+00:00",
+      "price": 74.95,
+      "product_key": "c1fae1bd651a2947",
+      "seller": null,
+      "site_id": "debroergrot",
+      "url": "https://www.debroergrot.nl/products/pokemon-tcg-30th-celebration-sylveon-collection-pre-order"
     }
   },
   "product_id": "30th-sylveon-ex-box"
