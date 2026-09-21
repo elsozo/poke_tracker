@@ -1,0 +1,19 @@
+{
+  "offers": {
+    "d5e13ffa5670c317": {
+      "canonical_product_id": "greninja-ex-tin",
+      "content_hash": "f13b8d60d1f25aee",
+      "currency": "EUR",
+      "first_seen": "2026-09-21T17:44:54.417219+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-09-21T17:44:54.417219+00:00",
+      "price": 129.0,
+      "product_key": "d5e13ffa5670c317",
+      "seller": null,
+      "site_id": "bescards",
+      "url": "https://bescards.com/products/pokemon-30th-anniversary-celebration-5-pack-usa-tin-greninja-ex"
+    }
+  },
+  "product_id": "greninja-ex-tin"
+}
