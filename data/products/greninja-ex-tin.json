@@ -2,13 +2,13 @@
   "offers": {
     "d5e13ffa5670c317": {
       "canonical_product_id": "greninja-ex-tin",
-      "content_hash": "f13b8d60d1f25aee",
+      "content_hash": "ce0169817ec899bd",
       "currency": "EUR",
       "first_seen": "2026-09-21T17:44:54.417219+00:00",
       "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-09-23T07:14:06.973239+00:00",
-      "price": 129.0,
+      "last_seen": "2026-09-23T13:17:15.998074+00:00",
+      "price": 128.0,
       "product_key": "d5e13ffa5670c317",
       "seller": null,
       "site_id": "bescards",
