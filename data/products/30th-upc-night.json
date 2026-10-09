@@ -2,13 +2,13 @@
   "offers": {
     "c148e6c9ede9f3c4": {
       "canonical_product_id": "30th-upc-night",
-      "content_hash": "51088ae4d4e38635",
+      "content_hash": "8030bbbb08a7f741",
       "currency": "EUR",
       "first_seen": "2026-08-22T11:16:29.307368+00:00",
       "in_stock": true,
       "is_preorder": false,
-      "last_seen": "2026-10-08T02:25:13.688608+00:00",
-      "price": null,
+      "last_seen": "2026-10-09T21:25:52.959727+00:00",
+      "price": 449.95,
       "product_key": "c148e6c9ede9f3c4",
       "seller": null,
       "site_id": "pkmkaarten",
