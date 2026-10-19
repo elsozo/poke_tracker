@@ -440,3 +440,6 @@
 {"canonical_product_id": "30th-espeon-battle-deck", "in_stock": true, "is_preorder": false, "price": null, "product_key": "6e31484f33f5a9a5", "ts": "2026-10-19T00:43:52.984792+00:00"}
 {"canonical_product_id": "30th-umbreon-battle-deck", "in_stock": true, "is_preorder": false, "price": null, "product_key": "311e009d8887bab2", "ts": "2026-10-19T05:38:34.349058+00:00"}
 {"canonical_product_id": "30th-espeon-battle-deck", "in_stock": true, "is_preorder": false, "price": null, "product_key": "6e31484f33f5a9a5", "ts": "2026-10-19T05:38:34.349058+00:00"}
+{"canonical_product_id": "30th-upc-day", "in_stock": true, "is_preorder": false, "price": 449.95, "product_key": "b0de24b85ac52da4", "ts": "2026-10-19T11:56:59.751329+00:00"}
+{"canonical_product_id": "30th-umbreon-battle-deck", "in_stock": true, "is_preorder": false, "price": null, "product_key": "311e009d8887bab2", "ts": "2026-10-19T11:56:59.751329+00:00"}
+{"canonical_product_id": "30th-espeon-battle-deck", "in_stock": true, "is_preorder": false, "price": null, "product_key": "6e31484f33f5a9a5", "ts": "2026-10-19T11:56:59.751329+00:00"}
