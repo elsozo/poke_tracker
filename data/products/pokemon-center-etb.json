@@ -2,12 +2,12 @@
   "offers": {
     "cf6e2e67bfe847cd": {
       "canonical_product_id": "pokemon-center-etb",
-      "content_hash": "7cbb1f1bfdfbb383",
+      "content_hash": "48707fb9ca18695a",
       "currency": "EUR",
       "first_seen": "2026-10-12T16:25:38.347516+00:00",
-      "in_stock": true,
+      "in_stock": false,
       "is_preorder": false,
-      "last_seen": "2026-10-30T16:29:22.042206+00:00",
+      "last_seen": "2026-10-30T21:20:25.906200+00:00",
       "price": 724.9,
       "product_key": "cf6e2e67bfe847cd",
       "seller": null,
