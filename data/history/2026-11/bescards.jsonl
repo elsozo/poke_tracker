@@ -562,3 +562,17 @@
 {"canonical_product_id": "30th-binder-collection", "in_stock": true, "is_preorder": false, "price": 102.0, "product_key": "91fd43210469055c", "ts": "2026-11-12T23:08:00.744380+00:00"}
 {"canonical_product_id": "30th-poster-collection", "in_stock": true, "is_preorder": false, "price": 57.0, "product_key": "84ee017c0857fdd2", "ts": "2026-11-12T23:08:00.744380+00:00"}
 {"canonical_product_id": "30th-etb", "in_stock": true, "is_preorder": false, "price": 158.0, "product_key": "2bb18b3992bd6e67", "ts": "2026-11-12T23:08:00.744380+00:00"}
+{"canonical_product_id": "30th-mini-tin", "in_stock": true, "is_preorder": false, "price": 34.0, "product_key": "ccc006bfd68fdeb9", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-binder-collection", "in_stock": true, "is_preorder": false, "price": 21.0, "product_key": "70e7d4a0e4167b03", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-mini-tin", "in_stock": true, "is_preorder": false, "price": 339.0, "product_key": "689b91b1ce04fda1", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-booster-bundle", "in_stock": true, "is_preorder": false, "price": 102.0, "product_key": "2a92e5aa13a6517b", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "sylveon-ex-tin", "in_stock": true, "is_preorder": false, "price": 74.0, "product_key": "f92d9b7826396fbe", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "greninja-ex-tin", "in_stock": true, "is_preorder": false, "price": 68.0, "product_key": "63138dd530816a2a", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-tech-sticker-lucario", "in_stock": true, "is_preorder": false, "price": 74.0, "product_key": "c3cfd0f56f3ea1cd", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-sylveon-ex-box", "in_stock": true, "is_preorder": false, "price": 68.0, "product_key": "583b313e59cfb87a", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-greninja-ex-box", "in_stock": true, "is_preorder": false, "price": 68.0, "product_key": "31686010baf06a50", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "greninja-ex-tin", "in_stock": false, "is_preorder": false, "price": 125.0, "product_key": "d5e13ffa5670c317", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "sylveon-ex-tin", "in_stock": false, "is_preorder": false, "price": 125.0, "product_key": "6576f100b953cad1", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-binder-collection", "in_stock": true, "is_preorder": false, "price": 102.0, "product_key": "91fd43210469055c", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-poster-collection", "in_stock": true, "is_preorder": false, "price": 57.0, "product_key": "84ee017c0857fdd2", "ts": "2026-11-13T04:48:23.181348+00:00"}
+{"canonical_product_id": "30th-etb", "in_stock": true, "is_preorder": false, "price": 158.0, "product_key": "2bb18b3992bd6e67", "ts": "2026-11-13T04:48:23.181348+00:00"}
