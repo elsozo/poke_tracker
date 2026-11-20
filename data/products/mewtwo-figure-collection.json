@@ -1,5 +1,19 @@
 {
   "offers": {
+    "151e6c79e87dd600": {
+      "canonical_product_id": "mewtwo-figure-collection",
+      "content_hash": "d85dafc5b60b89a6",
+      "currency": "EUR",
+      "first_seen": "2026-11-20T17:29:11.025184+00:00",
+      "in_stock": false,
+      "is_preorder": false,
+      "last_seen": "2026-11-20T17:29:11.025184+00:00",
+      "price": 75.0,
+      "product_key": "151e6c79e87dd600",
+      "seller": null,
+      "site_id": "dracaugames",
+      "url": "https://www.dracaugames.com/products/pokemon-coffret-collection-figurine-30e-anniversaire-me05-5-mewtwo"
+    },
     "b2962cb5f2af3b0e": {
       "canonical_product_id": "mewtwo-figure-collection",
       "content_hash": "606c7c22171dcf52",
@@ -7,7 +21,7 @@
       "first_seen": "2026-07-08T15:31:35.813841+00:00",
       "in_stock": true,
       "is_preorder": false,
-      "last_seen": "2026-11-20T08:17:48.143751+00:00",
+      "last_seen": "2026-11-20T17:29:11.025184+00:00",
       "price": 69.99,
       "product_key": "b2962cb5f2af3b0e",
       "seller": null,
@@ -21,7 +35,7 @@
       "first_seen": "2026-08-22T11:16:29.307368+00:00",
       "in_stock": true,
       "is_preorder": false,
-      "last_seen": "2026-11-20T08:17:48.143751+00:00",
+      "last_seen": "2026-11-20T17:29:11.025184+00:00",
       "price": 89.95,
       "product_key": "c4999aca8498b52d",
       "seller": null,
